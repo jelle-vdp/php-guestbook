@@ -23,10 +23,10 @@
             <?php if (count($postloader->getPosts()) > 0): ?>
             <section class="guestbook">
             
-                <?php for ($i = count($postloader->getPosts()) - 1; $i > -1; $i--): ?>
+                <?php for ($i = count($postloader->getPosts()) - 1; $i > $postloader->getAmountOfPostsStartpoint(); $i--): ?>
                     <article>
                         <h3><?= $postloader->getTitle($i) ?></h3>
-                        <p class="article__author"><em>Written by <?= $postloader->getAuthor($i) ?> on <?= $postloader->getDate($i) ?></em></p>
+                        <p class="article__info"><em>Written by <?= $postloader->getAuthor($i) ?> on <?= $postloader->getDate($i) ?></em></p>
                         <q class="article__body"><?= $postloader->getBody($i) ?></q>
                     </article>
                 <?php endfor; ?>

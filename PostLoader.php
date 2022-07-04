@@ -33,4 +33,12 @@
             return $this->posts[$i]["date"];
         }
     }
+
+    public function getAmountOfPostsStartpoint(){
+        if (count($this->posts) > 20){
+            return count($this->posts) - 21;
+        } else {
+            return - 1;
+        }
+    }
 }
